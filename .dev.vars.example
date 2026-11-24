@@ -1,0 +1,33 @@
+# Copy to .dev.vars for local work (`npm run preview`). Never commit .dev.vars.
+# In production set the same names with:  npx wrangler pages secret put NAME
+
+# 1 = validate and log only. No database writes, no email. Remove to go live.
+DRY_RUN=1
+
+# Supabase: Project Settings > API. Use the secret key, never the publishable one.
+SUPABASE_URL=https://YOUR-PROJECT.supabase.co
+SUPABASE_SECRET_KEY=
+
+# CloudMailin: Outbound > SMTP Accounts. The username goes in the API URL and
+# the API token is sent as the Bearer token.
+CLOUDMAILIN_SMTP_USERNAME=
+CLOUDMAILIN_API_TOKEN=
+# 1 = CloudMailin validates the message but does not deliver it.
+CLOUDMAILIN_TEST_MODE=
+
+# Sender (must be on a domain verified in CloudMailin) and where staff
+# notifications go. MAIL_REPLY_TO is optional and defaults to MAIL_NOTIFY_TO.
+MAIL_FROM=Onyx <concierge@yourdomain.com>
+MAIL_NOTIFY_TO=you@yourdomain.com
+MAIL_REPLY_TO=
+
+# Any long random string. Used to hash caller addresses for rate limiting.
+# Generate one with:  openssl rand -hex 32
+IP_HASH_SALT=
+
+# Optional. Cloudflare Turnstile secret. Pair it with
+# NEXT_PUBLIC_TURNSTILE_SITE_KEY in .env.local at build time.
+TURNSTILE_SECRET_KEY=
+
+# Optional. Extra origins allowed to post to /api (comma separated).
+ALLOWED_ORIGINS=

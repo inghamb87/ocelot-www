@@ -1,0 +1,5 @@
+# Cloudflare Pages project. Secrets are NOT stored here: use .dev.vars locally
+# and `wrangler pages secret put NAME` (or the dashboard) for production.
+name = "onyx-www"
+pages_build_output_dir = "out"
+compatibility_date = "2026-01-01"
